@@ -58,8 +58,7 @@ public class ExtractMovieLibraryUseCase implements Function<AddMovieCommand, Lis
                 //Getting Video URL
                 Elements iframe = doc.getElementsByClass("tabs-video hidden");
                 Elements categoryVideo = iframe.get(0).getElementById("level2_subtitulado").getElementsByTag("li");
-                String getFirstElementURL =
-                        categoryVideo.get(0).tagName("data-video").attributes().asList().get(1).toString();
+                String getFirstElementURL = categoryVideo.get(0).tagName("data-video").attributes().asList().get(1).toString();
                 String videoURL = getFirstElementURL.substring(12, getFirstElementURL.length() - 1);
 
                 movielibrary.addMovie(command.getMovieId(),title, year, genre, synopsis, duration, url_poster, videoURL);

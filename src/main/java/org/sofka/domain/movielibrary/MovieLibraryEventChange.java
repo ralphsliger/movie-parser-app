@@ -15,7 +15,7 @@ public class MovieLibraryEventChange implements EventChange {
         });
         listener((AddedMovie event)->{
             var movie = new Movie(event.getMovieId(), event.getTitle(), event.getYear(), event.getGenre(), event.getSynopsis(), event.getDuration(), event.getCoverUrl(), event.getMovieUrl());
-            movieLibrary.library.put(event.getMovieId(), movie);
+            movieLibrary.library.put(event.getTitle(), movie);
         });
     }
 }

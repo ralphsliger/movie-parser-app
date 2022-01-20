@@ -35,13 +35,13 @@ public class MovieLibraryHandle {
     @ConsumeEvent(value = "sofka.addedmovie", blocking = true)
     void consumePeliculaAsignada(AddedMovie event) {
         BasicDBObject document = new BasicDBObject();
-        document.put("movie."+event.getTitle()+".title", event.getTitle());
-        document.put("movie.."+event.getTitle()+".year", event.getYear());
-        document.put("movie.."+event.getTitle()+".genre", event.getTitle());
-        document.put("movie.."+event.getTitle()+".synopsis", event.getGenre());
-        document.put("movie.."+event.getTitle()+".duration", event.getDuration());
-        document.put("movie.."+event.getTitle()+".coverUrl", event.getCoverUrl());
-        document.put("movie.."+event.getTitle()+".movieUrl", event.getMovieUrl());
+        document.put("movie."+event.getTitle().strip()+".title", event.getTitle());
+        document.put("movie."+event.getTitle().strip()+".year", event.getYear());
+        document.put("movie."+event.getTitle().strip()+".genre", event.getTitle());
+        document.put("movie."+event.getTitle().strip()+".synopsis", event.getGenre());
+        document.put("movie."+event.getTitle().strip()+".duration", event.getDuration());
+        document.put("movie."+event.getTitle().strip()+".coverUrl", event.getCoverUrl());
+        document.put("movie."+event.getTitle().strip()+".movieUrl", event.getMovieUrl());
 
         BasicDBObject updateObject = new BasicDBObject();
         updateObject.put("$set", document);
