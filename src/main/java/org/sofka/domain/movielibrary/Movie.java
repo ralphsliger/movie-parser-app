@@ -55,4 +55,8 @@ public class Movie {
     public String MovieUrl() {
         return movieUrl;
     }
+
+
+
+
 }

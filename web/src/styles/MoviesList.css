@@ -1,0 +1,20 @@
+.moviesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .moviesList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .moviesList {
+    grid-template-columns: 1fr;
+  }
+}

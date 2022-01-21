@@ -11,8 +11,8 @@ import java.util.Map;
 
 public class MovieLibrary extends AggregateRoot {
 
-    protected Map<String, Movie> library;
     protected String name;
+    protected Map<String, Movie> library;
 
     public MovieLibrary(String libraryId, String name) {
         super(libraryId);
